@@ -1,6 +1,7 @@
 module sigs.k8s.io/gateway-api
 
 go 1.19
+replace sigs.k8s.io/gateway-api  => ./
 
 require (
 	github.com/ahmetb/gen-crd-api-reference-docs v0.3.0
