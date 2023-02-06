@@ -68,6 +68,17 @@ type GRPCRoute struct {
 	Status GRPCRouteStatus `json:"status,omitempty"`
 }
 
+type CustomGRPCRoute struct {
+	metav1.TypeMeta   `json:",inline"`
+	metav1.ObjectMeta `json:"metadata,omitempty"`
+
+	// Spec defines the desired state of GRPCRoute.
+	Spec GRPCRouteSpec `json:"spec,omitempty"`
+
+	// Status defines the current state of GRPCRoute.
+	Status GRPCRouteStatus `json:"status,omitempty"`
+}
+
 // +kubebuilder:object:root=true
 
 // GRPCRouteList contains a list of GRPCRoute.
@@ -75,6 +86,12 @@ type GRPCRouteList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
 	Items           []GRPCRoute `json:"items"`
+}
+
+type CustomGRPCRouteList struct {
+	metav1.TypeMeta `json:",inline"`
+	metav1.ListMeta `json:"metadata,omitempty"`
+	Items           []CustomGRPCRoute `json:"items"`
 }
 
 // GRPCRouteStatus defines the observed state of GRPCRoute.
